@@ -1,0 +1,22 @@
+%h1 Todoの編集
+= form_for @todo do |f|
+    - if @todo.errors.any?
+        %ul
+            - @todo.errors.full_messages.each do |msg|
+                %li
+                    #{msg}
+    %table
+        %tr
+            %td
+                = f.label :title, "タイトル"
+            %td
+                = f.text_field :title
+        %tr
+            %td
+                = f.label :body, "本文"
+            %td
+                = f.text_field :body
+        %tr
+            %td
+                = f.submit "Todoを編集する"
+                = link_to "一覧に戻る",todos_path

@@ -1,0 +1,15 @@
+%h1 詳細
+%table
+    %tr
+        %td
+            タイトル
+        %td
+            #{@todo.title}
+    %tr
+        %td
+            本文
+        %td
+            #{@todo.body}
+%hr/
+= link_to "一覧に戻る", todos_path
+        
